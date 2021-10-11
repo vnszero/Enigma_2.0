@@ -1,8 +1,8 @@
 import random
 
+CEIL = 122
 FLOOR = 32
 ROLLBACK = 90
-CEIL = 122
 
 def word_steam(message : str) -> str:
     #remove acent
@@ -29,7 +29,7 @@ def fog_maker(message : str) -> list:
     fog_pos = random.randint(FLOOR, fog_num) # don't use A to avoid weak codes
     fog_message = ''
     for alpha in message:
-        i = 1
+        i = FLOOR
         while i <= fog_num:
             if i == fog_pos:
                 fog_message += alpha
