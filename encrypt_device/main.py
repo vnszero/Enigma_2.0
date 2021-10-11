@@ -12,24 +12,33 @@ def main():
     message = input('Enter your message: ')
     pre_message = word_steam(message)
     
-    # ascii
-    alpha = list()
-    for i in range(91):
-        alpha.append(i+32)
+    # verify empty message
+    if pre_message != '':
+        # ascii
+        alpha = list()
+        for i in range(91):
+            alpha.append(i+31)
 
-    # random dictionary with the new codes
-    random_pos = dict()
-    while len(alpha) != 0:
-        new_pos = random.randint(0,len(alpha)-1)
-        random_pos[len(alpha)-1] = alpha.pop(new_pos)
+        # the set
+        new_message = ''
 
-    # new message
-    new_message = ''
-    for token in pre_message:
-        new_message += chr(random_pos[ord(token)-32])
-        print(ord(token)-32)
+        # random dictionary with the new codes
+        random_pos = dict()
+        while len(alpha) != 0:
+            new_pos = random.randint(0,len(alpha)-1)
+            new_message = new_pos+'{'
+            l = len(alpha)
+            random_pos[l] = alpha.pop(new_pos)
 
-    print(new_message)
+        print(random_pos)
+
+        # message content
+        for token in pre_message:
+            code = chr(random_pos[ord(token)-32])
+            new_message += code
+            #print(ord(token)-ord(code))
+
+        #print(new_message)
 
 if __name__ == '__main__':
     main()
