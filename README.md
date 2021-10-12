@@ -1,7 +1,7 @@
 # Enigma_2.0
 An encryption device based on Enigma from WWII
 
-## What is the diference here?
+## What is the difference here?
 Enigma 2.0 don't use a shuffle combination based on plugs and mixes.
 It uses Cesar Code plus fake letters plus config letters in the middle 
 of the message. There's not so many combinations as the old model but 
