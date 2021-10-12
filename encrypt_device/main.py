@@ -56,7 +56,6 @@ def main():
         crypt_message = chr(shift) + chr(fog_num) + chr(fog_pos) + fog_message
 
         # export
-        print(crypt_message)
         with open('code.txt', 'w') as file:
             file.write(crypt_message)
 

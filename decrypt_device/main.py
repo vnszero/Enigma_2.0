@@ -65,7 +65,9 @@ def main():
             # uncesar
             decrypt_message = uncesar(clear_message, ord(shift))
 
-            print(decrypt_message)
+            # export
+            with open('message.txt', 'w') as file:
+                file.write(decrypt_message)
     except:
         print('There is a problem with: code.txt, Tip: verify the path')
 
