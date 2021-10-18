@@ -44,7 +44,7 @@ def uncesar(message : str, shift : int) -> str:
     uncesar_message = ''
     for alpha in message:
         ord_ascii = ord(alpha)
-        if ord_ascii < shift + FLOOR:
+        if ord_ascii <= shift + FLOOR:
             uncesar_message += chr(ord_ascii+ROLLBACK-shift)
         else:
             uncesar_message += chr(ord(alpha)-shift)
